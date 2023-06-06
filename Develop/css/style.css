@@ -1,0 +1,44 @@
+:root {
+    background-color: darkgray;
+}
+
+#highscore {
+    float: left;
+    font-weight: bold;
+    margin-left: 3%;
+}
+
+#timetext {
+    font-size: 20px;
+}
+.Time {
+    font-size: 22px;
+    color: rgb(1, 1, 50);
+}
+
+.totaltime {
+    float: right;
+    font-weight: bold; 
+    margin-right: 8%;
+    margin-top: 2%;
+    text-align: left;
+}
+
+.heading {
+    text-align: center;
+    padding-top: 7%;
+    flex-wrap: wrap;
+
+}
+
+.instruction {
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.start {
+    text-align: center;
+    padding: 5%;
+}
