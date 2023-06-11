@@ -19,7 +19,6 @@
       <section class="homepage">
         <h1 class= "heading">Coding Quiz Challenge</h1>
         <div class="instruction">
-            
           <p id="inst">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers</p>
         </div>
         <div class="start">
@@ -28,15 +27,33 @@
       </section>
 
       <section class="quiz">
-        <div id = "Q1"></div>
-
+        <div id = "QuestionTitle"></div>
             <ul>
                 <li class="options"></li>
                 <li class="options"></li>
                 <li class="options"></li>
                 <li class="options"></li>
             </ul>
+      </section>
 
+      <section class="quizComplete">
+        <h2 class="allDone">All DONE! </h2>
+        <div class="scorecard">
+            <h3 id="finalScore"></h3>
+            <h4 id="timeRemaining"></h4>
+            <label for="initial">Enter you Initials: </label>
+            <input type="text" id="initial" maxlength="4">
+            <input type="button" id="submit" value="Submit">
+        </div>
+      </section>
+
+      <section class="highscore">
+        <div class=EndScore>
+            <h4 class="output" id="outputscore"></h4>
+            <button class="goBack">Go back</button>
+            <!-- location.reload() -->
+            <button class="clearHighscore">Clear Highscore</button>
+        </div>
       </section>
     </main>
     <script src="./Develop/js/script.js"></script>

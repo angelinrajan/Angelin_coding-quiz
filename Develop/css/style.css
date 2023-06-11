@@ -1,5 +1,5 @@
 :root {
-    background-color: darkgray;
+    background-color: rgb(208, 208, 208);
 }
 
 #highscore {
@@ -54,11 +54,34 @@ section {
 text-align: center;
 }
 
-#Q1 {
+#QuestionTitle {
     font-size: 30px;
 }
 
 .quiz_box {
     background-color: white;
     color:black;
+}
+
+li{
+    font-size: 1.5 rem;
+    padding:1%;
+    margin:1%;
+    border:2px soliid black;
+}
+
+.highscore {
+    background-color: aqua;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.EndScore {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
 }
