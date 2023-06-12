@@ -216,11 +216,11 @@ function ShowhighscorePage() {
 
         var stored = JSON.parse(getSaved);
 
-        for(i=0; i<getSaved.length; i++) {
-            var eachScore = getSaved[i];
-            var li = document.createElement("li");
-            li.innerHTML = eachScore
-            listScore.appendChild(li);
+        for(i=0; i<stored.length; i++) {
+            var eachScore = document.createElement("li");
+            
+            eachScore.innerHTML = stored[i].initial + ": " + stored[i].score;
+            listScore.appendChild(eachScore);
         }
 /*
     var currentScore = document.getElementById("outputscore");
