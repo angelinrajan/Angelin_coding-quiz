@@ -180,17 +180,55 @@ function highscorePage(event) {
         //listitem.style.display = 'none';
         highscore.style.display= 'block';
         initialText= initial.value;
-        localStorage.setItem("highscore", JSON.stringify(scoreCount));
-        var currentScore = document.getElementById("outputscore");
+
+        var savedScore = localStorage.getItem("high scores");
+        var scoresArray;
+
+        if (savedScore === null) {
+            scoresArray = [];
+        } else {
+            scoresArray = JSON.parse(savedScore)
+        }
+
+        var userscore = {
+            initial: initial.value,
+            score: scoreCount
+        };
+
+        console.log(userscore);
+        scoresArray.push(userscore);
+
+        var scoresString = JSON.stringify(scoresArray);
+        window.localStorage.setItem("high scores", scoresString);
+
+        ShowhighscorePage();
+    }
+};
+
+function ShowhighscorePage() {
+        
+        var getSaved = localStorage.getItem("high scores");
+
+        if (getSaved === null) {
+            return;
+        }
+        console.log(getSaved);
+
+        var stored = JSON.parse(getSaved);
+
+        for(i=0; i<getSaved.length; i++) {
+            var eachScore = getSaved[i];
+            var li = document.createElement("li");
+            li.innerHTML = eachScore
+            listScore.appendChild(li);
+        }
+/*
+    var currentScore = document.getElementById("outputscore");
        // currentScore.innerHTML = "Current Score for " + (initialText)+ " :";
         currentScore.innerText = "Current Score for " + (initialText)+ " : " + scoreCount;
-         JSON.parse(localStorage.getitem("highscore"));
-         
-  
-    
-    }
-    buttonClicks();
-};
+*/
+        buttonClicks();
+}
 
 function buttonClicks(){
     if (goBackbtn.addEventListener("click", refresh)) {
@@ -202,6 +240,8 @@ function buttonClicks(){
 
 function clearScore() {
     highscoreCount.textContent= GameOver[scoreCount];
+    window.localStorage.removeItem("high scores");
+    listScore.innerHTML = "Cleared Scores!!!! ";
 }
 /*
 function listtodo() {
