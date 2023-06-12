@@ -1,7 +1,7 @@
 /*
 let question1 = {
     question: "Commonly used data types DO NOT include: ",
-        options: ["strings", "booleans", "numbers", "alerts"],
+        options: ["Strings", "Booleans", "Numbers", "Alerts"],
         answer: 3
     };
 
@@ -12,7 +12,7 @@ let question2 = {
     };
     
 let question3 = {
-    question: "an Array starts with which index?",
+    question: "An array starts with which index?",
     options: ["0", "1", "2", "5"],
     answer: 0
     };
@@ -24,24 +24,34 @@ let question4 = {
 */
 var totalQuestion = [
     {
-        question: "Commonly used data types DO NOT include: ",
-        options: ["strings", "booleans", "numbers", "alerts"],
+        question: "Question 1-- Commonly used data types DO NOT include: ",
+        options: ["Strings", "Booleans", "Numbers", "Alerts"],
         answer: "alerts"
     },
     {
-        question: "How to call a function called passWord?",
+        question: "Question 2-- How to call a function called passWord?",
         options: ["call passWord()", "passWord()", "call function myFunction()()", "password()"],
         answer: "passWord()"
     },
     {
-        question: "an Array starts with which index?",
+        question: "Question 3-- An array starts with which index?",
         options: ["0", "1", "2", "5"],
         answer: "0"
     },
     {
-        question: "How do you declare a javaScript variable to names?",
+        question: "Question 4-- How do you declare a javaScript variable to names?",
         options: ["v names", "variable names;", "variables= names", "var names;"],
         answer: "var names;"
+    },
+    {
+        question: "Question 5-- Which of the following function of Array object calls a function for each element in the array?",
+        options: ["concat()", "every()", "filter()", "forEach()"],
+        answer: "forEach()"
+    },
+    {
+        question: "Question 6-- Which function is used to serialize an object into a JSON string in Javascript?",
+        options: ["stringify()", "parse()", "convert()", "changeme()"],
+        answer: "stringify()"
     }
 ];
 
@@ -63,7 +73,7 @@ option.forEach(element => element.addEventListener("click", Test))
 
 var timercount;
 var timer;
-time.textContent = "15"
+time.textContent = "60"
 var currentQuestion = 0;
 var scoreCount = 0;
 var listOfScores= [];
@@ -93,7 +103,7 @@ function startQuiz() {
     startButton.style.display = 'none';
     instruction.style.display = 'none';
     console.log("click event happening");
-    timercount = 15;
+    timercount = 60;
     console.log(scoreCount);
     listitem.style.display = "block"
     startTimer();
@@ -241,7 +251,7 @@ function buttonClicks(){
 function clearScore() {
     highscoreCount.textContent= GameOver[scoreCount];
     window.localStorage.removeItem("high scores");
-    listScore.innerHTML = "Cleared Scores!!!! ";
+    listScore.innerHTML = "Cleared Scores!!!! 🙌🙌🙌";
 }
 /*
 function listtodo() {
