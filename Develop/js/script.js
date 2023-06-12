@@ -49,6 +49,10 @@ var totalQuestion = [
 var viewHighscore = document.querySelector(".highscore");
 var time = document.querySelector(".Time");
 var startButton = document.querySelector(".StartButton");
+var goBackbtn = document.querySelector(".goBack");
+var clearbtn = document.querySelector(".clearHighscore");
+var listScore = document.querySelector("#listScore");
+var highscoreCount = document.querySelector("#highCount");
 var instruction = document.getElementById('inst');
 var titleQ = document.getElementById('QuestionTitle');
 var initial = document.getElementById('initial');
@@ -62,7 +66,11 @@ var timer;
 time.textContent = "15"
 var currentQuestion = 0;
 var scoreCount = 0;
-var enteredInitials;
+var listOfScores= [];
+
+
+//var enteredInitials;
+
 
 // window.onload = function () {
     var listitem = document.querySelector(".quiz");
@@ -75,7 +83,12 @@ var enteredInitials;
 // };
 startButton.addEventListener("click", startQuiz);
 
+function refresh(){
+location.reload();
+Done.style.display = 'none';
+highscore.style.display = 'none';
 
+}
 function startQuiz() {
     startButton.style.display = 'none';
     instruction.style.display = 'none';
@@ -145,20 +158,73 @@ function GameOver() {
     listitem.style.display = 'none';
     document.getElementById("finalScore").innerText = "Your final score is: " + (scoreCount)
     document.getElementById("timeRemaining").innerText = "Your time remaining is: " + timercount +" seconds"
-    submit();
+
+    submitClick();
 }
 
 
-function submit() {
-    submitbtn.addEventListener("click", high);
+function submitClick() {
+    submitbtn.addEventListener("click", highscorePage);
     };
 
 
-function high() {
-    Done.style.display = "none"
-    //listitem.style.display = 'none';
-    highscore.style.display= 'block';
+function highscorePage(event) {
+    event.preventDefault();
     initialText= initial.value;
-    document.getElementById("outputscore").innerHTML = "highscore for " + (initialText);
 
+    if (!initialText) {
+        alert("Please enter initials to proceed");
+    } else {
+
+        Done.style.display = "none"
+        //listitem.style.display = 'none';
+        highscore.style.display= 'block';
+        initialText= initial.value;
+        localStorage.setItem("highscore", JSON.stringify(scoreCount));
+        var currentScore = document.getElementById("outputscore");
+       // currentScore.innerHTML = "Current Score for " + (initialText)+ " :";
+        currentScore.innerText = "Current Score for " + (initialText)+ " : " + scoreCount;
+         JSON.parse(localStorage.getitem("highscore"));
+         
+  
+    
+    }
+    buttonClicks();
+};
+
+function buttonClicks(){
+    if (goBackbtn.addEventListener("click", refresh)) {
+        console.log("back was clicked");
+    } else if (clearbtn.addEventListener("click", clearScore)){
+        console.log("clear highscore was clicked");
+    }
+};
+
+function clearScore() {
+    highscoreCount.textContent= GameOver[scoreCount];
+}
+/*
+function listtodo() {
+    listScore.innerHTML = "";
+    highscoreCount.textContent = listScore.length;
+
+    for (var i = 0; i<listScore.length; i++) {
+        var listIt = listOfScores[i];
+        var li = document.createElement("li");
+        li.textContent = listIt;
+        listScore.appendChild(li);
+    }
+};
+
+function init() {
+    var scored = JSON.parse(localStorage.getitem("listOfScores"));
+
+    if (scored !== null) {
+        listOfScores = scored;
+    }
+    listtodo();
+}
+*/
+function storelist() {
+    var scored = JSON.parse(localStorage.getitem("highscore"));
 }

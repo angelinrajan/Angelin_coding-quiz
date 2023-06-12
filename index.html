@@ -42,14 +42,17 @@
             <h3 id="finalScore"></h3>
             <h4 id="timeRemaining"></h4>
             <label for="initial">Enter you Initials: </label>
-            <input type="text" id="initial" maxlength="4">
+            <input type="text" id="initial" maxlength="2">
             <input type="button" id="submit" value="Submit">
         </div>
       </section>
 
       <section class="highscore">
         <div class=EndScore>
-            <h4 class="output" id="outputscore"></h4>
+            <h4 class="outputTitle" id="outputscoreTitle">Highscore</h4>
+            <p class="output" id="outputscore"></p>
+            <p>Highscore Count: <span id="highCount">0</span></p>
+            <ul id="listScore"></ul>
             <button class="goBack">Go back</button>
             <!-- location.reload() -->
             <button class="clearHighscore">Clear Highscore</button>
