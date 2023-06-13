@@ -1,4 +1,4 @@
-/*
+/* Went with Arrays instead
 let question1 = {
     question: "Commonly used data types DO NOT include: ",
         options: ["Strings", "Booleans", "Numbers", "Alerts"],
@@ -146,7 +146,7 @@ function Test(event) {
         console.log(index);
       
     }else{
-        timercount -=2
+        timercount -=10
         console.log('Wrong Answer!');
         console.log(index);
     }
